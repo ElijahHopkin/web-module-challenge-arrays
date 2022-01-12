@@ -179,13 +179,15 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(array, string){
- let filteredArray= array.push(string)
-  for( let i=0; i<=array.length; i++) {
+ let filteredArray= [];
+  for( let i=0; i<array.length; i++) {
     if (array[i].includes(string)) {
-    filteredArray.push(string)
-  }
-  return filteredArray
-}}
+    filteredArray.push(array[i]);
+  } 
+} 
+return filteredArray;
+}
+console.log('task 7', filterByWord(originalFlavors,'Chocolate'))
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
