@@ -49,7 +49,7 @@ function copy(array){
  return [...array];
 } 
 
-console.log('task 1', copy(originalFlavors));   
+// console.log('task 1', copy(originalFlavors));   
 
 
 
@@ -74,7 +74,7 @@ function is31Flavors(array){
 }
 
 }
-console.log ('task 2', is31Flavors(originalFlavors))
+// console.log ('task 2', is31Flavors(originalFlavors))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -94,7 +94,7 @@ function addFlavor(array, newFlavor){
 array.unshift(newFlavor)
 return array
 }
-console.log ('task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'))
+// console.log ('task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -112,7 +112,7 @@ function removeLastFlavor(array){
  array.pop()
  return array
 }
-console.log('task 4', removeLastFlavor(originalFlavors))
+// console.log('task 4', removeLastFlavor(originalFlavors))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -130,7 +130,7 @@ function getFlavorByIndex(array, index){
 return array[index]
 
 }
-console.log('task 5', getFlavorByIndex(originalFlavors,2))
+// console.log('task 5', getFlavorByIndex(originalFlavors,2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -154,7 +154,7 @@ function removeFlavorByName(array, flavor){
   }
   return array
 }
-console.log('task 6', removeFlavorByName(originalFlavors, 'Rocky Road'))
+// console.log('task 6', removeFlavorByName(originalFlavors, 'Rocky Road'))
 
 
 
@@ -187,7 +187,7 @@ function filterByWord(array, string){
 } 
 return filteredArray;
 }
-console.log('task 7', filterByWord(originalFlavors,'Chocolate'))
+// console.log('task 7', filterByWord(originalFlavors,'Chocolate'))
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
@@ -202,10 +202,29 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(originalFlavors){
+  let wordSpread=[];
+  let wordCount=[];
+  for (let i=0; i<originalFlavors.length; i++){
+    wordSpread.push(originalFlavors[i].split(' '))
+  }
+  for(let i=0; i<wordSpread.length; i++) {
+    wordCount.push(wordSpread[i].length)
+  }
+  const sum= wordCount.reduce((acc, item) => {
+    return acc+ item
+  }, 0);
+  let numberOfItems = originalFlavors.length;
+//  console.log( wordSpread)
+ console.log(wordCount)
+console.log('what?', sum);
+const final= sum/numberOfItems;
+return final
+console.log(final)
+// return wordCount.reduce((prev, item) => {
+//   return prev + item}, 0)
 }
-
+console.log(getAverageWordLength(originalFlavors))
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
